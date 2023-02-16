@@ -1,0 +1,11 @@
+D:\ChatApp\ChatApp-v2\ChatServer\bin\Debug\ChatServer.exe.config
+D:\ChatApp\ChatApp-v2\ChatServer\bin\Debug\ChatServer.exe
+D:\ChatApp\ChatApp-v2\ChatServer\bin\Debug\ChatServer.pdb
+D:\ChatApp\ChatApp-v2\ChatServer\bin\Debug\SuperSimpleTcp.dll
+D:\ChatApp\ChatApp-v2\ChatServer\obj\Debug\ChatServer.Properties.Resources.resources
+D:\ChatApp\ChatApp-v2\ChatServer\obj\Debug\ChatServer.Server.resources
+D:\ChatApp\ChatApp-v2\ChatServer\obj\Debug\ChatServer.csproj.GenerateResource.cache
+D:\ChatApp\ChatApp-v2\ChatServer\obj\Debug\ChatServer.csproj.CoreCompileInputs.cache
+D:\ChatApp\ChatApp-v2\ChatServer\obj\Debug\ChatServer.csproj.CopyComplete
+D:\ChatApp\ChatApp-v2\ChatServer\obj\Debug\ChatServer.exe
+D:\ChatApp\ChatApp-v2\ChatServer\obj\Debug\ChatServer.pdb
