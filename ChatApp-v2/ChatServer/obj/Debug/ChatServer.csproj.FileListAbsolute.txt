@@ -9,3 +9,15 @@ D:\ChatApp\ChatApp-v2\ChatServer\obj\Debug\ChatServer.csproj.CoreCompileInputs.c
 D:\ChatApp\ChatApp-v2\ChatServer\obj\Debug\ChatServer.csproj.CopyComplete
 D:\ChatApp\ChatApp-v2\ChatServer\obj\Debug\ChatServer.exe
 D:\ChatApp\ChatApp-v2\ChatServer\obj\Debug\ChatServer.pdb
+C:\Users\alexa\OneDrive\Dokumente\GitHub\ChatApp\ChatApp-v2\ChatServer\bin\Debug\ChatServer.exe.config
+C:\Users\alexa\OneDrive\Dokumente\GitHub\ChatApp\ChatApp-v2\ChatServer\bin\Debug\ChatServer.exe
+C:\Users\alexa\OneDrive\Dokumente\GitHub\ChatApp\ChatApp-v2\ChatServer\bin\Debug\ChatServer.pdb
+C:\Users\alexa\OneDrive\Dokumente\GitHub\ChatApp\ChatApp-v2\ChatServer\bin\Debug\SuperSimpleTcp.dll
+C:\Users\alexa\OneDrive\Dokumente\GitHub\ChatApp\ChatApp-v2\ChatServer\obj\Debug\ChatServer.csproj.AssemblyReference.cache
+C:\Users\alexa\OneDrive\Dokumente\GitHub\ChatApp\ChatApp-v2\ChatServer\obj\Debug\ChatServer.Properties.Resources.resources
+C:\Users\alexa\OneDrive\Dokumente\GitHub\ChatApp\ChatApp-v2\ChatServer\obj\Debug\ChatServer.Server.resources
+C:\Users\alexa\OneDrive\Dokumente\GitHub\ChatApp\ChatApp-v2\ChatServer\obj\Debug\ChatServer.csproj.GenerateResource.cache
+C:\Users\alexa\OneDrive\Dokumente\GitHub\ChatApp\ChatApp-v2\ChatServer\obj\Debug\ChatServer.csproj.CoreCompileInputs.cache
+C:\Users\alexa\OneDrive\Dokumente\GitHub\ChatApp\ChatApp-v2\ChatServer\obj\Debug\ChatServer.csproj.CopyComplete
+C:\Users\alexa\OneDrive\Dokumente\GitHub\ChatApp\ChatApp-v2\ChatServer\obj\Debug\ChatServer.exe
+C:\Users\alexa\OneDrive\Dokumente\GitHub\ChatApp\ChatApp-v2\ChatServer\obj\Debug\ChatServer.pdb

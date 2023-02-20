@@ -127,7 +127,8 @@ namespace ChatApp_v2
             this.txtIP.Name = "txtIP";
             this.txtIP.Size = new System.Drawing.Size(114, 20);
             this.txtIP.TabIndex = 2;
-            this.txtIP.Text = "192.168.178.26";
+            this.txtIP.Text = "127.0.0.1";
+            this.txtIP.Validated += new System.EventHandler(this.txtIP_Validated);
             // 
             // btnConnect
             // 

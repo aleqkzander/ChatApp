@@ -15,13 +15,18 @@ namespace ChatServer
     {
         private SimpleTcpServer server;
 
+
         public Server()
         {
             InitializeComponent();
         }
 
+
         private void Server_Load(object sender, EventArgs e)
         {
+            // start server
+            if (Properties.Settings.Default.lastip != string.Empty)
+                txtIP.Text = Properties.Settings.Default.lastip;
             server = new SimpleTcpServer(txtIP.Text, 8888);
             server.Events.ClientConnected += Events_ClientConnected;
             server.Events.ClientDisconnected += Events_ClientDisconnected;
@@ -31,15 +36,17 @@ namespace ChatServer
 
         private void Events_DataReceived(object sender, DataReceivedEventArgs e)
         {
+            // call the receive method and pass in the received data
             ReceiveMessage(txtLog, txtMessage, e);
         }
 
 
         private void Events_ClientDisconnected(object sender, ConnectionEventArgs e)
         {
+            // log disconnect event
             Invoke((MethodInvoker)delegate
             {
-                txtLog.Text += $"<{DateTime.Now}-{e.IpPort}>: Disconnected \n\n";
+                //txtLog.Text += $"<{DateTime.Now}-{e.IpPort}>: Disconnected \n\n";
                 lstClients.Items.Remove(e.IpPort);
             });
         }
@@ -47,9 +54,10 @@ namespace ChatServer
 
         private void Events_ClientConnected(object sender, ConnectionEventArgs e)
         {
+            // log connection event
             Invoke((MethodInvoker)delegate
             {
-                txtLog.Text += $"<{DateTime.Now}-{e.IpPort}>: Connected \n\n";
+                //txtLog.Text += $"<{DateTime.Now}-{e.IpPort}>: Connected \n\n";
                 lstClients.Items.Add(e.IpPort);
             });
         }
@@ -63,10 +71,13 @@ namespace ChatServer
         /// <param name="e"></param>
         private void ReceiveMessage(RichTextBox logBox, TextBox messageBox, DataReceivedEventArgs e)
         {
+            // log the incomming message
             Invoke((MethodInvoker)delegate {
-                logBox.Text += $"<{DateTime.Now}-{e.IpPort}>:\n send a message \n\n";
+                //logBox.Text += $"<{DateTime.Now}-{e.IpPort}>:\n send a message \n\n";
             });
 
+
+            // format the data and present it
             Invoke((MethodInvoker)delegate {
                 string _messageReceived = Encoding.UTF8.GetString(e.Data.Array, 0, e.Data.Count);
                 string _finalMessage = _messageReceived.Replace("#", ":\n");
@@ -82,10 +93,12 @@ namespace ChatServer
         {
             if (server.IsListening && !string.IsNullOrEmpty(txtMessage.Text) && lstClients.SelectedItem != null)
             {
+                // convert the message and send to selected client
                 string username = txtUsername.Text;
                 string _messageToSend = $"{username}#{txtMessage.Text}";
                 server.Send(lstClients.SelectedItem.ToString(), _messageToSend);
 
+                // format data for own display
                 string _finalMessage = _messageToSend.Replace("#", ":\n");
                 txtReceived.Text += $"{DateTime.Now} " + _finalMessage + "\n\n";
                 txtMessage.Text = string.Empty;
@@ -95,8 +108,15 @@ namespace ChatServer
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            server.Start();
-            txtLog.Text += $"<{DateTime.Now}>: Chat server started \n\n";
+            try
+            {
+                server.Start();
+                MessageBox.Show("Server started!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
 
@@ -108,8 +128,17 @@ namespace ChatServer
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.Message);
             }
+        }
+
+
+        private void txtIP_Validated(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.lastip = txtIP.Text;
+            Properties.Settings.Default.Save();
+            MessageBox.Show("Application will be restarted for the address change become active");
+            Application.Restart();
         }
     }
 }

@@ -48,7 +48,6 @@ namespace ChatServer
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.lstClients);
-            this.groupBox1.Controls.Add(this.txtLog);
             this.groupBox1.Controls.Add(this.txtUsername);
             this.groupBox1.Controls.Add(this.txtIP);
             this.groupBox1.Controls.Add(this.btnStart);
@@ -62,18 +61,19 @@ namespace ChatServer
             // lstClients
             // 
             this.lstClients.FormattingEnabled = true;
-            this.lstClients.Location = new System.Drawing.Point(291, 19);
+            this.lstClients.Location = new System.Drawing.Point(127, 19);
             this.lstClients.Name = "lstClients";
-            this.lstClients.Size = new System.Drawing.Size(181, 82);
+            this.lstClients.Size = new System.Drawing.Size(345, 82);
             this.lstClients.TabIndex = 5;
             // 
             // txtLog
             // 
-            this.txtLog.Location = new System.Drawing.Point(127, 20);
+            this.txtLog.Location = new System.Drawing.Point(439, 120);
             this.txtLog.Name = "txtLog";
-            this.txtLog.Size = new System.Drawing.Size(158, 81);
+            this.txtLog.Size = new System.Drawing.Size(46, 34);
             this.txtLog.TabIndex = 4;
             this.txtLog.Text = "";
+            this.txtLog.Visible = false;
             // 
             // txtUsername
             // 
@@ -89,7 +89,8 @@ namespace ChatServer
             this.txtIP.Name = "txtIP";
             this.txtIP.Size = new System.Drawing.Size(114, 20);
             this.txtIP.TabIndex = 2;
-            this.txtIP.Text = "192.168.178.26";
+            this.txtIP.Text = "127.0.0.1";
+            this.txtIP.Validated += new System.EventHandler(this.txtIP_Validated);
             // 
             // btnStart
             // 
@@ -155,6 +156,7 @@ namespace ChatServer
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(503, 367);
             this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.txtLog);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Server";
